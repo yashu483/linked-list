@@ -6,6 +6,6 @@ const newList = new LinkedList();
 
 newList.append('first');
 newList.append('second');
-newList.append('third');
+newList.prepend('third');
 
-console.table(newList.head, newList.tail);
+console.log(newList.head, newList.tail);
