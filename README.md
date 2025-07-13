@@ -1,5 +1,5 @@
 # Project Linked List
-[check it live here](https://yashu483.github.io/linked-list/)
+[try code in devtool console](https://yashu483.github.io/linked-list/)
 
 ## Introduction:
 
