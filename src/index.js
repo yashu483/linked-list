@@ -2,6 +2,7 @@
 
 import { LinkedList } from './modules/linked-list';
 
+window.LinkedList = LinkedList;
 // example uses class syntax - adjust as necessary
 const list = new LinkedList();
 
