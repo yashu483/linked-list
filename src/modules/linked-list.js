@@ -29,6 +29,20 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  get size() {
+    let count = 0;
+
+    const getSize = function getSize(node) {
+      count += 1;
+      if (node.next === null) {
+        return count;
+      } else {
+        return getSize(node.next);
+      }
+    };
+    return getSize(this.head);
+  }
 }
 
 export { LinkedList };
