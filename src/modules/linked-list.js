@@ -106,6 +106,41 @@ class LinkedList {
     };
     return createString(this.head);
   }
+
+  insertAt(value, index) {
+    const newNode = new Node(value);
+    if (index === 0) {
+      if (this.head === null) {
+        this.head = newNode;
+        this.tail = newNode;
+      } else {
+        newNode.next = this.head;
+        this.head = newNode;
+      }
+      return;
+    }
+    let count = index;
+
+    const insert = function insert(node, count) {
+      if ((count > 1 && node.next === null) || count < 0) {
+        console.log('Out of range index.');
+        return;
+      }
+      if (count === 1 && node.next === null) {
+        node.next = newNode;
+        return;
+      } else if (count === 1) {
+        newNode.next = node.next;
+        node.next = newNode;
+      } else {
+        insert(node.next, count - 1);
+      }
+    };
+    insert(this.head, count);
+    if (this.tail.next !== null) {
+      this.tail = this.tail.next;
+    }
+  }
 }
 
 export { LinkedList };
