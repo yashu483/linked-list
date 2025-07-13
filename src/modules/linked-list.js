@@ -141,6 +141,33 @@ class LinkedList {
       this.tail = this.tail.next;
     }
   }
+
+  removeAt(index) {
+    if (index === 0) {
+      if (this.head === null) {
+        return;
+      } else {
+        this.head = this.head.next;
+        return;
+      }
+    }
+    const remove = function remove(node, index) {
+      if (
+        (index === 1 && node.next === null) ||
+        index < 0 ||
+        (index > 1 && node.next === null)
+      ) {
+        console.log('Out of range index.');
+        return;
+      } else if (index === 1) {
+        node.next = node.next.next;
+        return;
+      } else {
+        remove(node.next, index - 1);
+      }
+    };
+    remove(this.head, index);
+  }
 }
 
 export { LinkedList };

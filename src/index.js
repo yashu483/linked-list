@@ -2,13 +2,14 @@
 
 import { LinkedList } from './modules/linked-list';
 
-const newList = new LinkedList();
+// example uses class syntax - adjust as necessary
+const list = new LinkedList();
 
-newList.append('first');
-newList.append('second');
-newList.insertAt('middle', 1);
-newList.prepend('third');
-newList.prepend('third');
-newList.insertAt('ooyaah', 5);
+list.append('dog');
+list.append('cat');
+list.append('parrot');
+list.append('hamster');
+list.append('snake');
+list.append('turtle');
 
-console.log(newList.head);
+console.log(list.toString());
