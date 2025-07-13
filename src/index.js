@@ -12,6 +12,7 @@ newList.prepend('third');
 console.log(
   newList.head,
   newList.tail,
+  newList.find('first'),
   newList.pop(),
   newList.tail,
   newList.size,
@@ -20,4 +21,9 @@ console.log(
   newList.tail,
 );
 newList.pop();
-console.log(newList.head, newList.tail, newList.contains('first'));
+console.log(
+  newList.head,
+  newList.tail,
+  newList.contains('first'),
+  newList.find('first'),
+);

@@ -79,6 +79,21 @@ class LinkedList {
     };
     return check(this.head);
   }
+
+  find(value) {
+    let count = 0;
+    const check = function check(node) {
+      if (node.next === null && node.value !== value) {
+        return null;
+      } else if (node.value === value) {
+        return count;
+      } else {
+        count += 1;
+        return check(node.next);
+      }
+    };
+    return check(this.head);
+  }
 }
 
 export { LinkedList };
