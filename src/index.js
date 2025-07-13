@@ -9,4 +9,15 @@ newList.append('second');
 newList.prepend('third');
 newList.prepend('third');
 
-console.log(newList.head, newList.tail, newList.size);
+console.log(
+  newList.head,
+  newList.tail,
+  newList.pop(),
+  newList.tail,
+  newList.size,
+  newList.at(2),
+  newList.at(100),
+  newList.tail,
+);
+newList.pop();
+console.log(newList.head, newList.tail, newList.contains('first'));

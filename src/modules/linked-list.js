@@ -43,6 +43,42 @@ class LinkedList {
     };
     return getSize(this.head);
   }
+  at(index) {
+    const getNode = function getNode(node, index) {
+      if (index === 0) {
+        return node;
+      } else if (node.next === null && index > 0) {
+        return 'Error: Out of range Index.';
+      } else {
+        return getNode(node.next, index - 1);
+      }
+    };
+    return getNode(this.head, index);
+  }
+  pop() {
+    const remove = function remove(node) {
+      if (node.next.next === null) {
+        node.next = null;
+        return node;
+      } else {
+        return remove(node.next);
+      }
+    };
+    this.tail = remove(this.head);
+  }
+
+  contains(value) {
+    const check = function check(node) {
+      if (node.next === null && node.value !== value) {
+        return false;
+      } else if (node.value === value) {
+        return true;
+      } else {
+        return check(node.next);
+      }
+    };
+    return check(this.head);
+  }
 }
 
 export { LinkedList };
