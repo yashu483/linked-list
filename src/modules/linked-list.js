@@ -94,6 +94,18 @@ class LinkedList {
     };
     return check(this.head);
   }
+  toString() {
+    let string = '';
+    const createString = function createString(node) {
+      if (node.next === null) {
+        return string + `(${node.value}) -> (${node.next})`;
+      } else {
+        string = string + `(${node.value})` + ` -> `;
+        return createString(node.next);
+      }
+    };
+    return createString(this.head);
+  }
 }
 
 export { LinkedList };

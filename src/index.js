@@ -10,6 +10,7 @@ newList.prepend('third');
 newList.prepend('third');
 
 console.log(
+  newList.toString(),
   newList.head,
   newList.tail,
   newList.find('first'),
@@ -27,3 +28,5 @@ console.log(
   newList.contains('first'),
   newList.find('first'),
 );
+
+console.log(newList.toString());
